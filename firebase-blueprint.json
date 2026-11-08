@@ -1,0 +1,152 @@
+{
+  "entities": {
+    "room": {
+      "title": "Room",
+      "description": "A private digital room workspace.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Unique room display name" },
+        "slug": { "type": "string", "description": "Normalized alphanumeric room slug" },
+        "pinHash": { "type": "string", "description": "Hashed 6-digit access PIN" },
+        "ownerDeviceId": { "type": "string", "description": "Master owner device identifier" },
+        "quotaBytes": { "type": "number", "description": "Allocated room storage quota" },
+        "usedBytes": { "type": "number", "description": "Currently consumed storage bytes" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Room creation timestamp" }
+      },
+      "required": ["name", "slug", "pinHash", "ownerDeviceId", "quotaBytes", "createdAt"]
+    },
+    "roomDevice": {
+      "title": "Room Device",
+      "description": "A connected device in the room mesh.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Device nickname" },
+        "platform": { "type": "string", "enum": ["windows", "mac", "linux", "android", "ios", "browser"] },
+        "isOnline": { "type": "boolean", "description": "Live connection state" },
+        "lastSeen": { "type": "string", "format": "date-time", "description": "Last heartbeat timestamp" },
+        "usedStorageBytes": { "type": "number", "description": "Storage space used by device" },
+        "joinedAt": { "type": "string", "format": "date-time", "description": "First joined timestamp" }
+      },
+      "required": ["name", "platform", "isOnline", "lastSeen", "joinedAt"]
+    },
+    "roomFile": {
+      "title": "Room File",
+      "description": "A file stored in the room cloud drive.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "File name" },
+        "originalName": { "type": "string", "description": "Original file name" },
+        "sizeBytes": { "type": "number", "description": "File size in bytes" },
+        "mimeType": { "type": "string", "description": "MIME type" },
+        "folderId": { "type": "string", "description": "Parent folder ID or null" },
+        "uploadedByDeviceId": { "type": "string", "description": "Uploader device ID" },
+        "uploadedByDeviceName": { "type": "string", "description": "Uploader device name" },
+        "uploaderRole": { "type": "string", "enum": ["owner", "admin", "member", "viewer"] },
+        "uploadedAt": { "type": "string", "format": "date-time", "description": "Upload timestamp" },
+        "isDeleted": { "type": "boolean", "description": "Soft deleted trash flag" },
+        "downloadCount": { "type": "number", "description": "Number of downloads" }
+      },
+      "required": ["name", "sizeBytes", "mimeType", "uploadedByDeviceId", "uploadedAt", "isDeleted"]
+    },
+    "roomFolder": {
+      "title": "Room Folder",
+      "description": "A directory organizing room files.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Folder display name" },
+        "parentId": { "type": "string", "description": "Parent folder ID or null" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "createdByDeviceId": { "type": "string", "description": "Creator device ID" },
+        "createdByDeviceName": { "type": "string", "description": "Creator device name" }
+      },
+      "required": ["name", "createdAt", "createdByDeviceId"]
+    },
+    "roomActivity": {
+      "title": "Room Activity",
+      "description": "An audit log event in the room.",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "description": "Event action type" },
+        "title": { "type": "string", "description": "Event headline" },
+        "description": { "type": "string", "description": "Detailed description" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Event timestamp" },
+        "deviceId": { "type": "string", "description": "Actor device ID" },
+        "deviceName": { "type": "string", "description": "Actor device name" }
+      },
+      "required": ["type", "title", "description", "timestamp", "deviceId", "deviceName"]
+    },
+    "roomChatMessage": {
+      "title": "Room Chat Message",
+      "description": "A chat message posted to the room.",
+      "type": "object",
+      "properties": {
+        "senderDeviceId": { "type": "string", "description": "Sender device ID" },
+        "senderDeviceName": { "type": "string", "description": "Sender device name" },
+        "senderRole": { "type": "string", "enum": ["owner", "admin", "member", "viewer"] },
+        "text": { "type": "string", "description": "Message content" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Message timestamp" }
+      },
+      "required": ["senderDeviceId", "senderDeviceName", "senderRole", "text", "timestamp"]
+    },
+    "roomClipboardItem": {
+      "title": "Room Clipboard Item",
+      "description": "A synchronized clipboard text snippet.",
+      "type": "object",
+      "properties": {
+        "content": { "type": "string", "description": "Clipboard text" },
+        "fromDeviceId": { "type": "string", "description": "Source device ID" },
+        "fromDeviceName": { "type": "string", "description": "Source device name" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Share timestamp" },
+        "pinned": { "type": "boolean", "description": "Pin to top status" }
+      },
+      "required": ["content", "fromDeviceId", "fromDeviceName", "timestamp"]
+    },
+    "roomNote": {
+      "title": "Room Note",
+      "description": "A collaborative scratchpad note.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Note title" },
+        "content": { "type": "string", "description": "Markdown body" },
+        "lastEditedByDeviceId": { "type": "string", "description": "Editor device ID" },
+        "lastEditedByDeviceName": { "type": "string", "description": "Editor device name" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Update timestamp" }
+      },
+      "required": ["title", "content", "lastEditedByDeviceId", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/rooms/{roomId}": {
+      "schema": { "$ref": "#/entities/room" },
+      "description": "Private digital room spaces."
+    },
+    "/rooms/{roomId}/devices/{deviceId}": {
+      "schema": { "$ref": "#/entities/roomDevice" },
+      "description": "Paired devices in the room mesh."
+    },
+    "/rooms/{roomId}/files/{fileId}": {
+      "schema": { "$ref": "#/entities/roomFile" },
+      "description": "Cloud drive files metadata."
+    },
+    "/rooms/{roomId}/folders/{folderId}": {
+      "schema": { "$ref": "#/entities/roomFolder" },
+      "description": "Directories organizing files."
+    },
+    "/rooms/{roomId}/activities/{activityId}": {
+      "schema": { "$ref": "#/entities/roomActivity" },
+      "description": "Live audit activity timeline."
+    },
+    "/rooms/{roomId}/chatMessages/{messageId}": {
+      "schema": { "$ref": "#/entities/roomChatMessage" },
+      "description": "Room discussions and peer chat."
+    },
+    "/rooms/{roomId}/clipboardItems/{itemId}": {
+      "schema": { "$ref": "#/entities/roomClipboardItem" },
+      "description": "Synchronized peer clipboard items."
+    },
+    "/rooms/{roomId}/notes/{noteId}": {
+      "schema": { "$ref": "#/entities/roomNote" },
+      "description": "Collaborative markdown notes."
+    }
+  }
+}

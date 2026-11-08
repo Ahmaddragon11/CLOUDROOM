@@ -1,0 +1,264 @@
+{
+  "rooms": {
+    "CR-DRAGON-8921": {
+      "id": "CR-DRAGON-8921",
+      "name": "DRAGON SPACE",
+      "slug": "DRAGONSPACE",
+      "pinHash": "4a8eec4925826f4b60526d7ac3c0a9b61ef54ac19233bafce2f4a13eb49395d2",
+      "createdAt": "2026-11-07T22:00:37.358Z",
+      "ownerDeviceId": "dev_mac_ahmad_01",
+      "quotaBytes": 53687091200,
+      "usedBytes": 15773640,
+      "devices": [
+        {
+          "id": "dev_mac_ahmad_01",
+          "name": "Ahmad's MacBook Pro M3",
+          "platform": "mac",
+          "isOnline": true,
+          "lastSeen": "2026-11-08T22:00:37.358Z",
+          "ipAddress": "192.168.1.42",
+          "browser": "Chrome 122 / macOS",
+          "usedStorageBytes": 15728640,
+          "joinedAt": "2026-11-07T22:00:37.358Z"
+        },
+        {
+          "id": "dev_samsung_s24",
+          "name": "Samsung Galaxy S24 Ultra",
+          "platform": "android",
+          "isOnline": true,
+          "lastSeen": "2026-11-08T22:00:37.358Z",
+          "ipAddress": "192.168.1.88",
+          "browser": "Samsung Internet / Android 14",
+          "usedStorageBytes": 524288,
+          "joinedAt": "2026-11-08T10:00:37.358Z"
+        },
+        {
+          "id": "dev_linux_station",
+          "name": "Dragon Linux Workstation",
+          "platform": "linux",
+          "isOnline": false,
+          "lastSeen": "2026-11-08T20:00:37.358Z",
+          "ipAddress": "10.0.0.15",
+          "browser": "Firefox Developer / Ubuntu",
+          "usedStorageBytes": 0,
+          "joinedAt": "2026-11-08T04:00:37.358Z"
+        },
+        {
+          "id": "dev_6e3eadeb0b5b",
+          "name": "My Linux Device",
+          "platform": "linux",
+          "isOnline": true,
+          "lastSeen": "2026-11-08T22:01:45.248Z",
+          "ipAddress": "127.0.0.1",
+          "usedStorageBytes": 0,
+          "joinedAt": "2026-11-08T22:01:45.248Z"
+        }
+      ],
+      "folders": [
+        {
+          "id": "fld_projects",
+          "name": "Projects & Schematics",
+          "parentId": null,
+          "createdAt": "2026-11-08T12:00:37.358Z",
+          "createdByDeviceId": "dev_mac_ahmad_01",
+          "createdByDeviceName": "Ahmad's MacBook Pro M3",
+          "color": "#06b6d4"
+        },
+        {
+          "id": "fld_media",
+          "name": "Media & Recordings",
+          "parentId": null,
+          "createdAt": "2026-11-08T14:00:37.358Z",
+          "createdByDeviceId": "dev_mac_ahmad_01",
+          "createdByDeviceName": "Ahmad's MacBook Pro M3",
+          "color": "#818cf8"
+        }
+      ],
+      "files": [
+        {
+          "id": "file_spec_doc",
+          "name": "CloudRoom_Platform_Specification.pdf",
+          "originalName": "CloudRoom_Platform_Specification.pdf",
+          "sizeBytes": 4444304,
+          "mimeType": "application/pdf",
+          "folderId": "fld_projects",
+          "uploadedByDeviceId": "dev_mac_ahmad_01",
+          "uploadedByDeviceName": "Ahmad's MacBook Pro M3",
+          "uploaderRole": "owner",
+          "uploadedAt": "2026-11-08T13:00:37.358Z",
+          "updatedAt": "2026-11-08T13:00:37.358Z",
+          "isDeleted": false,
+          "path": "sample_whitepaper.pdf",
+          "tags": [
+            "Spec",
+            "V1.0",
+            "Confidential"
+          ],
+          "downloadCount": 4
+        },
+        {
+          "id": "file_arch_text",
+          "name": "Architecture_Overview.txt",
+          "originalName": "architecture_overview.txt",
+          "sizeBytes": 24576,
+          "mimeType": "text/plain",
+          "folderId": "fld_projects",
+          "uploadedByDeviceId": "dev_mac_ahmad_01",
+          "uploadedByDeviceName": "Ahmad's MacBook Pro M3",
+          "uploaderRole": "owner",
+          "uploadedAt": "2026-11-08T15:00:37.358Z",
+          "updatedAt": "2026-11-08T15:00:37.358Z",
+          "isDeleted": false,
+          "path": "architecture_overview.txt",
+          "tags": [
+            "Architecture",
+            "Notes"
+          ],
+          "downloadCount": 7
+        }
+      ],
+      "activities": [
+        {
+          "id": "act_1794175419731",
+          "type": "clipboard_send",
+          "title": "Clipboard Shared",
+          "description": "New text shared by My Linux Device (git clone https://github.com/d...)",
+          "timestamp": "2026-11-08T22:03:39.731Z",
+          "deviceId": "dev_6e3eadeb0b5b",
+          "deviceName": "My Linux Device"
+        },
+        {
+          "id": "act_1794175305248",
+          "type": "device_join",
+          "title": "Device Connected",
+          "description": "My Linux Device (linux) joined the room",
+          "timestamp": "2026-11-08T22:01:45.248Z",
+          "deviceId": "dev_6e3eadeb0b5b",
+          "deviceName": "My Linux Device"
+        },
+        {
+          "id": "act_1",
+          "type": "device_join",
+          "title": "Device Connected",
+          "description": "Ahmad's MacBook Pro M3 joined room as Room Owner",
+          "timestamp": "2026-11-07T22:00:37.358Z",
+          "deviceId": "dev_mac_ahmad_01",
+          "deviceName": "Ahmad's MacBook Pro M3"
+        },
+        {
+          "id": "act_2",
+          "type": "folder_create",
+          "title": "Folder Created",
+          "description": "Created folder \"Projects & Schematics\"",
+          "timestamp": "2026-11-08T12:00:37.358Z",
+          "deviceId": "dev_mac_ahmad_01",
+          "deviceName": "Ahmad's MacBook Pro M3"
+        },
+        {
+          "id": "act_3",
+          "type": "file_upload",
+          "title": "File Uploaded",
+          "description": "Uploaded \"CloudRoom_Platform_Specification.pdf\" (4.2 MB)",
+          "timestamp": "2026-11-08T13:00:37.358Z",
+          "deviceId": "dev_mac_ahmad_01",
+          "deviceName": "Ahmad's MacBook Pro M3"
+        },
+        {
+          "id": "act_4",
+          "type": "device_join",
+          "title": "New Device Paired",
+          "description": "Samsung Galaxy S24 Ultra authenticated into DRAGON SPACE",
+          "timestamp": "2026-11-08T10:00:37.358Z",
+          "deviceId": "dev_samsung_s24",
+          "deviceName": "Samsung Galaxy S24 Ultra"
+        }
+      ],
+      "chatMessages": [
+        {
+          "id": "msg_1",
+          "senderDeviceId": "dev_mac_ahmad_01",
+          "senderDeviceName": "Ahmad's MacBook Pro M3",
+          "senderRole": "owner",
+          "text": "Welcome to DRAGON SPACE! Feel free to sync your mobile device and drop your project schematics here.",
+          "timestamp": "2026-11-08T10:00:37.358Z"
+        },
+        {
+          "id": "msg_2",
+          "senderDeviceId": "dev_samsung_s24",
+          "senderDeviceName": "Samsung Galaxy S24 Ultra",
+          "senderRole": "member",
+          "text": "Connected successfully from mobile. Cloud sync and clipboard are working instantaneously!",
+          "timestamp": "2026-11-08T16:00:37.358Z"
+        }
+      ],
+      "clipboardItems": [
+        {
+          "id": "clip_1794175419731",
+          "content": "git clone https://github.com/dragon/cloudroom-core.git",
+          "fromDeviceId": "dev_6e3eadeb0b5b",
+          "fromDeviceName": "My Linux Device",
+          "timestamp": "2026-11-08T22:03:39.731Z",
+          "pinned": false
+        },
+        {
+          "id": "clip_1",
+          "content": "https://cloudroom.io/join/DRAGONSPACE?code=482913",
+          "fromDeviceId": "dev_mac_ahmad_01",
+          "fromDeviceName": "Ahmad's MacBook Pro M3",
+          "timestamp": "2026-11-08T20:00:37.358Z",
+          "pinned": true
+        },
+        {
+          "id": "clip_2",
+          "content": "ssh root@192.168.1.120 -p 2204 # Production Gateway Node",
+          "fromDeviceId": "dev_mac_ahmad_01",
+          "fromDeviceName": "Ahmad's MacBook Pro M3",
+          "timestamp": "2026-11-08T21:00:37.358Z",
+          "pinned": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "note_main",
+          "title": "🚀 DRAGON SPACE Operational Directives",
+          "content": "## Welcome to DRAGON SPACE Private Cloud\n\nThis room serves as our unified multi-device workspace.\n\n### Key Guidelines:\n- **Storage Quota:** 50 GB allocated across all connected devices.\n- **Clipboard Sync:** Toggle auto-accept in the Clipboard tab to sync snippets.\n- **Public Sharing:** Generate expiring links for external collaborators.\n- **Trash Retention:** Deleted files can be restored for up to 30 days.",
+          "lastEditedByDeviceId": "dev_mac_ahmad_01",
+          "lastEditedByDeviceName": "Ahmad's MacBook Pro M3",
+          "updatedAt": "2026-11-08T19:00:37.358Z"
+        }
+      ],
+      "temporaryShares": [],
+      "securityAudits": [
+        {
+          "id": "sec_1794175305249",
+          "action": "Device Joined",
+          "status": "success",
+          "details": "My Linux Device verified and granted access (Role: member)",
+          "timestamp": "2026-11-08T22:01:45.248Z"
+        },
+        {
+          "id": "sec_1",
+          "action": "Room Created",
+          "status": "success",
+          "details": "DRAGON SPACE initialized with 6-digit access PIN and owner credentials",
+          "timestamp": "2026-11-07T22:00:37.358Z"
+        },
+        {
+          "id": "sec_2",
+          "action": "Device Authentication",
+          "status": "success",
+          "details": "Samsung Galaxy S24 Ultra joined room via PIN verification",
+          "timestamp": "2026-11-08T10:00:37.358Z"
+        }
+      ],
+      "settings": {
+        "allowMemberUpload": true,
+        "allowMemberDelete": false,
+        "requireApprovalForDevices": false,
+        "trashRetentionDays": 30,
+        "clipboardAutoSync": true
+      }
+    }
+  },
+  "rateLimits": {}
+}

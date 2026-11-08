@@ -1,0 +1,6 @@
+{
+  "name": "CLOUDROOM - Your Private Digital Space",
+  "description": "A private digital room platform unifying multi-device workspaces, cloud storage, live device sync, shared clipboard, secure file transfer, and room collaboration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

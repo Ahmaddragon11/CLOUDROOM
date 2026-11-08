@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 64 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    match /rooms/{roomId} {
+      allow read, create: if isValidId(roomId);
+      allow update, delete: if isValidId(roomId);
+
+      match /{subcollection}/{docId} {
+        allow read, write: if isValidId(roomId) && isValidId(docId);
+      }
+    }
+  }
+}
